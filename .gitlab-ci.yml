@@ -1,16 +1,10 @@
 image: python:3.7-alpine
 
 stages:
-  - build
   - test
 
 services:
     - docker
-
-build:
-  stage: build
-  script:
-    - echo "Building..."
 
 test:
   stage: test

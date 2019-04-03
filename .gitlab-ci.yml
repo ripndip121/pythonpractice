@@ -9,7 +9,9 @@ build:
   stage: build
   script:
     - echo "Building..."
-  before_script:
-    - pip install docker-compose
+
+test:
+  stage: test
   script:
+    - pip install docker-compose
     - docker-compose run app sh -c "python manage.py test && flake8"

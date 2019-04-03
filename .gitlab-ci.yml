@@ -7,11 +7,8 @@ services:
 
 build:
   stage: build
+  script:
     - echo "Building..."
-
-test:
-  stage: test
-    - echo "testing..."
   before_script:
     - pip install docker-compose
   script:

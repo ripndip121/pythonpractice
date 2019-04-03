@@ -1,12 +1,18 @@
-language: python
-python:
-    - "3.6"
+stages:
+  - build
+  - test
 
 services:
     - docker
 
-before_script:
-    - pip install docker-compose
+build:
+  stage: build
+    - echo "Building..."
 
-script:
+test:
+  stage: test
+    - echo "testing..."
+  before_script:
+    - pip install docker-compose
+  script:
     - docker-compose run app sh -c "python manage.py test && flake8"

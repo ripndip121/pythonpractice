@@ -3,8 +3,6 @@ MAINTAINER Solstech
 
 ENV PYTHONUNBUFFERED 1
 
-RUN pip install pipenv
-RUN pipenv install
 RUN apk add --update --no-cache postgresql-client
 RUN apk add --update --no-cache --virtual .tmp-build-deps \
       gcc libc-dev linux-headers postgresql-dev
